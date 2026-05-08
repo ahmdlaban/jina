@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For Jana - From Ahmed (loly)</title>
+    <meta name="description" content="A simple love letter for Jana from Ahmed Tamer." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Outfit:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Floating emoji background -->
+    <div class="emoji-bg" id="emojiBg" aria-hidden="true"></div>
+
+    <!-- Main story container -->
+    <main class="main-wrap">
+      <!-- Header with controls -->
+      <header class="header">
+        <button class="music-btn" id="musicToggle" type="button">♫</button>
+        <span class="title">For Jana 💕</span>
+        <button class="replay-btn" id="replayBtn" type="button">↻</button>
+      </header>
+
+      <!-- Story card -->
+      <section class="story-page" id="storyPage" aria-live="polite">
+        <!-- Avatar -->
+        <div class="avatar-wrap">
+          <img src="assets/avatar.png" alt="Ahmed" class="avatar-img" id="avatarImg" />
+        </div>
+
+        <!-- Speech bubble -->
+        <div class="speech-bubble" id="speechBubble">
+          <p id="storyText" class="story-text"></p>
+          <span class="cursor" id="cursor">|</span>
+        </div>
+
+        <!-- Memory image -->
+        <figure class="memory-img-wrap" id="memoryImgWrap">
+          <img src="about:blank" alt="Memory" class="memory-img" id="memoryImg" />
+        </figure>
+
+        <!-- Next button -->
+        <button class="next-btn" id="nextBtn" type="button">Next ✨</button>
+      </section>
+    </main>
+
+    <!-- Audio -->
+    <audio id="bgMusic" loop preload="auto" playsinline>
+      <source src="assets/08._Jana.mp3" type="audio/mpeg" />
+    </audio>
+
+    <script src="script.js"></script>
+  </body>
+</html>
