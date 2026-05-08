@@ -23,19 +23,19 @@ const pages = [
   },
   {
     text: "baby Jana, my first love 💕",
-    image: "assets/1.jpg",
+    image: "1.jpg",
   },
   {
     text: "4aba7y, my endless love 💖",
-    image: "assets/2.jpg",
+    image: "2.jpg",
   },
   {
     text: "our first chat 💌",
-    image: "assets/3.jpg",
+    image: "3.jpg",
   },
   {
     text: "happy birthday ya jojy\n\nlove you so much 💕",
-    image: "assets/4.jpg",
+    image: "4.jpg",
   },
 ];
 
