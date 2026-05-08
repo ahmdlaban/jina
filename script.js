@@ -9,7 +9,6 @@ const nextBtn = document.getElementById("nextBtn");
 const bgMusic = document.getElementById("bgMusic");
 const musicToggle = document.getElementById("musicToggle");
 const replayBtn = document.getElementById("replayBtn");
-const loadingOverlay = document.getElementById("loadingOverlay");
 
 let currentPage = -1;
 let isTyping = false;
@@ -40,26 +39,8 @@ const pages = [
   },
 ];
 
-async function preloadAssets() {
-  const assetPaths = [
-    "avatar.png",
-    "1.jpg",
-    "2.jpg",
-    "3.jpg",
-    "4.jpg",
-  ];
-
-  return Promise.all(
-    assetPaths.map(
-      (path) =>
-        new Promise((resolve) => {
-          const img = new Image();
-          img.onload = resolve;
-          img.onerror = resolve; // Continue even if one fails
-          img.src = path;
-        })
-    )
-  );
+async function wait(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 function createFloatingEmojis() {
@@ -167,14 +148,6 @@ musicToggle.addEventListener("click", () => {
 window.addEventListener("load", async () => {
   createFloatingEmojis();
   bgMusic.volume = 0.4;
-
-  // Preload all assets first
-  await preloadAssets();
-
-  // Hide loading overlay
-  loadingOverlay.classList.add("hidden");
-
-  // Now show the page
   await goToPage(0);
 
   // Play music on first user interaction (required by browser policies)
