@@ -42,6 +42,42 @@ body {
   animation: floatSlow linear infinite;
 }
 
+/* Loading overlay */
+.loading-overlay {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  gap: 16px;
+  background: var(--white);
+  z-index: 50;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.loading-overlay.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid var(--gray);
+  border-top-color: var(--pink);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.loading-overlay p {
+  margin: 0;
+  font-family: "Caveat", cursive;
+  font-size: 1.2rem;
+  color: var(--pink);
+}
+
 /* Header */
 .header {
   display: flex;
@@ -116,7 +152,7 @@ body {
   max-width: 320px;
   text-align: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  min-height: 80px;
+  min-height: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -186,6 +222,12 @@ body {
 }
 
 /* Animations */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 @keyframes floatGentle {
   0%,
   100% {
@@ -264,7 +306,7 @@ body {
   .speech-bubble {
     max-width: 420px;
     padding: 20px 24px;
-    min-height: 100px;
+    min-height: 140px;
   }
 
   .memory-img-wrap {
